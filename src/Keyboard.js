@@ -1,31 +1,28 @@
 class Keyboard {
     constructor() {
       this.Keys = [
-          'a','b','c','d','e','f','g','h','i','j','k','l', 'ñ','m','n','o','p','q','r','s','t','u','v','w','x','y','z'
-      ];
+          'A','B','C','D','E','F','G','H','I','J','K','L','Ñ','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
     }
     drawKeyboard() {
-      const container=document.querySelector("#container");
-      let count=0;
-        while (count<this.Keys.length) {
-          const button=document.createElement("button");
-          button.textContent=this.Keys[count]
-          button.addEventListener('click',(e)=>{
-            console.log(e.target.textContent);
-          })
-          container.appendChild(button)
-          count++;
-      }
-      console.log(container);
+    
+      return this.Keys;
     }
-    showCorrect(letter){
-      if (letter == true) {
-          return (this.Keys = "Correcta");
-        } else {
-          return (this.Keys = "Incorreta");
-        }
-      }
+    // showCorrect(letter){
+    //   if (letter == true) {
+    //       return (this.Keys = "Correcta");
+    //     } else {
+    //       return (this.Keys = "Incorreta");
+    //     }
+    //   }
   
     }
-  export default Keyboard;
+
+// class botonVerde {
+//   constructor()
+// }
+// let botonVerde = class {
+
+// }
+
+  export {Keyboard};
 
