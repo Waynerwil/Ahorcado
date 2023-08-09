@@ -19,8 +19,22 @@ vector.map(key =>{
     button.textContent=key
     button.addEventListener('click',(e)=>{
         console.log(e.target.textContent);
-        button.classList = 'azul'
-        Letter(e.target.textContent)
+        button.classList = 'verde'
+        console.log(Panels.showCorrect(e.target.textContent));
+        adivinar.textContent = '';
+
+        palabra.map(vectorAdivinanza =>{
+            const h2=document.createElement("h2");
+            h2.textContent=vectorAdivinanza
+            h2.addEventListener('click',(e)=>{
+            console.log(e.target.textContent);
+            })
+            adivinar.appendChild(h2)
+        })
+
+
+        // button.classList = 'rojo'
+        // Panels.showCorrect(e.target.textContent);
     })
     container.appendChild(button)
 

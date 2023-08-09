@@ -1,10 +1,10 @@
 class Panel{
     constructor(){
-        this.palabras = ['Perro', 'Adivinar', 'casa', 'Odontólogo', 'Playa', 'JavaScript', 'HTML', 'CSS', 'Otorrinolaringólogo']
+        this.palabras = ['perro', 'adivinar', 'casa', 'odontologo', 'playa', 'javaScript', 'html', 'css', 'otorrinolaringologo', 'elefante', 'kiwi', 'wikipedia']
         this.vectorAdivinanza = []
-        this.palabraElejida
+        this.palabraElejida = '';
+        this.vectorRespuesta = []
  }
-
 
  dibujarLineas(){
 
@@ -16,6 +16,8 @@ class Panel{
 
     console.log(this.palabraElejida);
 
+    this.vectorRespuesta = Array.from(this.palabraElejida)
+
     for (let index = 0; index < this.palabraElejida.length; index++) {
         this.vectorAdivinanza.push('_')
         
@@ -23,17 +25,21 @@ class Panel{
     return this.vectorAdivinanza;
  }
 
- showCorrect(letter){
-    if (letter == true) {
-        return (this.Keys = "Correcta");
-      } else {
-        return (this.Keys = "Incorreta");
-      }
-    }
-    
+  showCorrect(letter){
 
+    const letraMinuscula = letter.toLowerCase();
+      this.vectorRespuesta.map((letra, posicion) =>{
+        if (letra == letter || letra == letraMinuscula) {
+          this.vectorAdivinanza[posicion] = letter
+        } else {
+          console.log("Incorrecta");
+        }
+        
+      })
 
-
+      return this.vectorAdivinanza;
+  }
 }
+ 
 
 export {Panel}
