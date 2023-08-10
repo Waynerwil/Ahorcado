@@ -1,40 +1,61 @@
 import { Keyboard } from "./Keyboard.js";
 import { Panel } from "./Panel.js";
+import { Bodyparts } from "./Bodyparts.js";
 
 
 const App = new Keyboard();
 
 const Panels = new Panel();
+
+const Body = new Bodyparts();
 console.log(Panels);
 
 const vector = App.drawKeyboard();
-const palabra = Panels.dibujarLineas();
+const word = Panels.dibujarLineas();
 
-console.log(palabra);
+let conta = 0;
+let conta2 = 1;
+
+console.log(word);
 
 const container=document.querySelector("#container");
+const parts = document.getElementById("parts")
+console.log(parts);
 
-vector.map(key =>{
+vector.map((key) =>{
     const button=document.createElement("button");
     button.textContent=key
     button.addEventListener('click',(e)=>{
         console.log(e.target.textContent);
-        button.classList = 'verde'
-        console.log(Panels.showCorrect(e.target.textContent));
-        adivinar.textContent = '';
+        const verifica = Panels.showCorrectV2(e.target.textContent, conta);
+        // debugger
+        console.log(verifica);
+        if (verifica) {
+            button.classList = 'green'
+            // index++;
+        }
+        else{
+            button.classList = 'red'
+            parts.src = Body.nextimage(conta2)
 
-        palabra.map(vectorAdivinanza =>{
+            conta2++;
+
+        }
+        console.log(Panels.showCorrect(e.target.textContent));
+        guess.textContent = '' ;
+        console.log(e.target.textContent);
+        console.log(Panels.showCorrect(e.target.textContent));
+
+        word.map(vectorAdivinanza =>{
             const h2=document.createElement("h2");
             h2.textContent=vectorAdivinanza
             h2.addEventListener('click',(e)=>{
             console.log(e.target.textContent);
             })
-            adivinar.appendChild(h2)
+            guess.appendChild(h2)
         })
 
 
-        // button.classList = 'rojo'
-        // Panels.showCorrect(e.target.textContent);
     })
     container.appendChild(button)
 
@@ -42,13 +63,13 @@ vector.map(key =>{
 
 })
 
-palabra.map(vectorAdivinanza =>{
+word.map(vectorAdivinanza =>{
     const h2=document.createElement("h2");
     h2.textContent=vectorAdivinanza
     h2.addEventListener('click',(e)=>{
     console.log(e.target.textContent);
     })
-    adivinar.appendChild(h2)
+    guess.appendChild(h2)
 })
 
 
@@ -59,20 +80,3 @@ document.addEventListener('DOMContentLoaded',()=>{
     const board= new Keyboard();
     board.drawKeyboard();
 })
-
-// vectorLetras.map(key =>{
-//     const div = document.createElement('div');
-//     const h3 = document.createElement('h3');
-
-//     h3.textContent = key.letter
-//     div.classList = 'Div_Letra'
-
-//     div.appendChild(h3);
-//     Keyboard.appendChild(div)
-
-//     div.addEventListener('click', function(){
-//         App.showCorrect(h3.textContent)
-//           
-//     })
-// })
-

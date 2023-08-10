@@ -39,6 +39,16 @@ class Panel{
 
       return this.vectorAdivinanza;
   }
+
+  showCorrectV2(letter, indexs){ 
+    const letraMinuscula = letter.toLowerCase();
+    
+    for (let index = indexs; index < this.vectorRespuesta.length; index++) {
+      if (this.vectorRespuesta[index] == letter || this.vectorRespuesta[index] == letraMinuscula) {
+        return true
+      }
+    }
+  }
 }
  
 
