@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/styles/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <link rel="icon" href="../assets/images/game-development.png">
+    <title>Ahorcado</title>
+  </head>
 
-    <div id="adivinar"></div>
-    <div id="container">
-        
+  <body>
+
+
+    <!-- <FORM name=form action="TU_PAGINA_WEB.HTML">
+      <P>Usuario:<INPUT type=text name=login> 
+      <INPUT onclick=go() type=button value=Acceder>
+    </FORM>  -->
+
+    <div id="etiqueta">
+      <div class="content">
+        <h4>Game Over bitch</h4>
+        <p>The correct word was: <b>perro</b></p>
+        <button id="play_again">Play Again</button>
+      </div>
     </div>
-    <!-- <button>Start</button> -->
-</body>
-<script type="module" src="../src/index.js"></script>
+    
+    <h1>Ahorcado del diablo</h1>
+    <!-- <div id="timer" style="color: rgb(0, 0, 0);">00:00</div> -->
+    <div class="container.body">
+      <img class="body" id="parts" src="../assets/images/1.png" alt="" srcset="">
+    </div>
+    <div id="guess"></div>
+    <div id="container"></div>
+    <!-- counter -->
+  <div id="counter">
+    <span id="attempts">7</span>
+  </div>
+
+  </body>
+  <script type="module" src="../src/index.js"></script>
 </html>

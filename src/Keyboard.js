@@ -24,5 +24,22 @@ class Keyboard {
 
 // }
 
+
+
+// document.addEventListener('keydown', (event) => {
+//   var keyValue = event.key;
+//   // var codeValue = event.code;
+//   console.log("keydown event, keyValue: " + keyValue);
+//   console.log("keydown event, codeValue: " + codeValue);
+// }, false);
+// // document.addEventListener('keyup', (event) => {
+// //   var keyValue = event.key;
+// //   var codeValue = event.code;
+//   // console.log("keyup event, keyValue: " + keyValue);
+//   // console.log("keyup event, codeValue: " + codeValue);
+// // }, false);
+
+
+
   export {Keyboard};
 
