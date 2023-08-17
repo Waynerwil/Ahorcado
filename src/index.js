@@ -1,6 +1,19 @@
-import { Keyboard } from "./Keyboard.js";
-import { Panel } from "./Panel.js";
-import { Bodyparts } from "./Bodyparts.js";
+import { Keyboard } from "./components/Keyboard.js";
+import { Panel } from "./components/Panel.js";
+import { Bodyparts } from "./components/Bodyparts.js";
+import { PokemonApi } from "./api/pokemon.api.js";
+
+async function getP() {
+    const pokemon = new PokemonApi();
+    const dataPokemon = await pokemon.getRandomPokemon();
+    console.log(dataPokemon.sprites.other['official-artwork']['front_default']);
+    // const img = document.createElement('img')
+    parts.src = dataPokemon.sprites.other['official-artwork']['front_default']
+  
+    console.log(Panels.dibujarPokemon(dataPokemon.name));
+    console.log(dataPokemon.name);
+  }
+  getP();
 
 const App = new Keyboard();
 
@@ -14,15 +27,7 @@ const word = Panels.dibujarLineas();
 
 let conta = 0;
 let conta2 = 1;
-let i = 0;
 let counts = 7;
-
-while (i < 0) {
-  console.log(`Numero: ${i}`);
-  i++;
-}
-
-console.log(word);
 
 const container = document.querySelector("#container");
 const parts = document.getElementById("parts");
@@ -30,9 +35,6 @@ const attempts = document.getElementById("attempts");
 
 const div = document.createElement("div");
 const h1 = document.createElement("h1");
-
-const etiqueta = document.getElementById("etiqueta");
-etiqueta.style.visibility="hidden";
 
 h1.textContent = "GANASTE";
 div.appendChild(h1);
@@ -45,39 +47,29 @@ vector.map((key) => {
   button.addEventListener("click", (e) => {
     console.log(e.target.textContent);
     const verifica = Panels.showCorrectV2(e.target.textContent, conta);
-    //  
-    console.log(verifica);
+    //
+
     if (verifica) {
       button.classList = "green";
-      // index++;
+    //   parts.src = Body.nextimage(6);
+      counts = 0;
+      conta2 = 0;
     } else {
-      button.classList = "red";
-      if (attempts == 0) {
-        alert('Perdiste')
-        parts.src = Body.nextimage(6);
-        counts = 0;
-        conta2 = 0;
+        button.classList = "red";
+        if (attempts == 0) {
+            // parts.src = Body.nextimage(conta2);
+            counts--;
+            conta2++;
+        attempts.textContent = counts;
         // etiqueta.style.visibility="visible";
       } else {
         // Arreglar
-        parts.src = Body.nextimage(conta2);
-        counts--;
-        conta2++;
-        attempts.textContent = counts;
       }
     }
     console.log(Panels.showCorrect(e.target.textContent));
     guess.textContent = "";
     console.log(e.target.textContent);
     console.log(Panels.showCorrect(e.target.textContent));
- 
-    // if (conta == 0) {
-    //   console.log("perdió");
-    //   conta == 0
-    // } else {
-    //   conta --;
-    // }
-    // alert("PUTOOOOOOO")
 
     word.map((vectorAdivinanza) => {
       const h2 = document.createElement("h2");
@@ -89,12 +81,6 @@ vector.map((key) => {
     });
   });
   container.appendChild(button);
-});
-
-const botonreinicia = document.getElementById("play_again");
-botonreinicia.addEventListener("click", () => {
-  console.log('reinicia');
-  location.reload(true);
 });
 
 word.map((vectorAdivinanza) => {

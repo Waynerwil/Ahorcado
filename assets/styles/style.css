@@ -1,8 +1,10 @@
 body{
-    background-image: url(https://i.pinimg.com/originals/71/31/77/713177e7b221e3d2570237268fd19c6e.gif);
+    background-image: url(https://www.mundodeportivo.com/alfabeta/hero/2020/05/pokemon-estadio.jpg?width=1200);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+ 
 #container{
     display: flex;
     justify-content: center;

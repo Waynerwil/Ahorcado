@@ -6,19 +6,26 @@ class Panel{
         this.vectorRespuesta = []
  }
 
+dibujarPokemon(pokemon){
+  
+  return this.vectorRespuesta = Array.from(pokemon)
+}
+
+
+
  dibujarLineas(){
 
-    let idpalabra = 0
+    // let idpalabra = 0
 
-    idpalabra = Math.floor(Math.random() * (this.palabras.length - 0) + 0)
+    // idpalabra = Math.floor(Math.random() * (this.palabras.length - 0) + 0)
 
-    this.palabraElejida = this.palabras[idpalabra];
+    // this.palabraElejida = this.palabras[idpalabra];
 
-    console.log(this.palabraElejida);
+    // console.log(this.palabraElejida);
 
-    this.vectorRespuesta = Array.from(this.palabraElejida)
+    // this.vectorRespuesta = Array.from(this.palabraElejida)
 
-    for (let index = 0; index < this.palabraElejida.length; index++) {
+    for (let index = 0; index < this.vectorRespuesta.length; index++) {
         this.vectorAdivinanza.push('_')
         
     }
