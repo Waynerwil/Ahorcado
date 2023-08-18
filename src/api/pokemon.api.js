@@ -7,7 +7,7 @@ class PokemonApi {
     }
 
 async getRandomPokemon(){
-    const randomId = Math.floor(Math.random() * 1) + 1
+    const randomId = Math.floor(Math.random() * 493) + 1
     const url = `${this.baseURL}/${randomId}`;
     try {
         const response = await fetch(url);

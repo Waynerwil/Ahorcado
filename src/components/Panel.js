@@ -37,7 +37,7 @@ dibujarPokemon(pokemon){
     const letraMinuscula = letter.toLowerCase();
       this.vectorRespuesta.map((letra, posicion) =>{
         if (letra == letter || letra == letraMinuscula) {
-          this.vectorAdivinanza[posicion] = letter
+          this.vectorAdivinanza[posicion] = letraMinuscula
         } else {
           console.log("Incorrecta");
         }
@@ -54,6 +54,19 @@ dibujarPokemon(pokemon){
       if (this.vectorRespuesta[index] == letter || this.vectorRespuesta[index] == letraMinuscula) {
         return true
       }
+    }
+  }
+
+  isAWin() {
+    let variable =
+      JSON.stringify(this.vectorRespuesta) === JSON.stringify(this.vectorAdivinanza);
+
+    if (variable === true) {
+
+      return true;
+    } else {
+
+      return false;
     }
   }
   

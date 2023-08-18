@@ -1,0 +1,17 @@
+body {
+  background: url(https://wallpaperaccess.com/full/4167709.gif);
+  display: flex;
+  justify-content: center;
+  padding: 300px;
+  background-position: 100%;
+}
+
+button {
+  height: 60px;
+  width: 100px;
+  background: #3494e6;
+  background: -webkit-linear-gradient(to right, #ec6ead, #3494e6);
+  background: linear-gradient(to right, #ec6ead, #3494e6);
+
+  cursor: pointer;
+}
